@@ -24,8 +24,8 @@ native-activity = []
 [dependencies]
 log = "0.4"
 jni-sys = "0.3"
-ndk = "0.7"
-ndk-sys = "0.4"
+ndk = { git = "https://github.com/zarik5/android-ndk-rs", rev = "dea742a" }
+ndk-sys = { git = "https://github.com/zarik5/android-ndk-rs", rev = "dea742a" }
 ndk-context = "0.1"
 android-properties = "0.2"
 num_enum = "0.5"
