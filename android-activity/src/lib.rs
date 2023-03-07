@@ -472,7 +472,7 @@ impl AndroidApp {
         self.inner.read().unwrap().native_window()
     }
 
-    pub fn native_activity1(&self) -> *const ndk_sys::ANativeActivity {
+    pub fn native_activity(&self) -> *const ndk_sys::ANativeActivity {
         self.inner.read().unwrap().native_activity()
     }
 
