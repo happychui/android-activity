@@ -472,6 +472,10 @@ impl AndroidApp {
         self.inner.read().unwrap().native_window()
     }
 
+    pub fn native_activity(&self) -> *const ndk_sys::ANativeActivity {
+        self.inner.read().unwrap().native_activity()
+    }
+
     /// Polls for any events associated with this [AndroidApp] and processes those events
     /// (such as lifecycle events) via the given `callback`.
     ///
