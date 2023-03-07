@@ -731,7 +731,17 @@ unsafe extern "C" fn on_input_queue_destroyed(
     });
 }
 
-/// This is the native entrypoint for our cdylib library that `ANativeActivity` will look for via `dlsym`
+//ANativeActivity finish(
+// This is the native entrypoint for our cdylib library that `ANativeActivity` will look for via `dlsym`
+#[no_mangle]
+extern "C" fn ANativeActivity_onCreate(
+    activity: *mut ndk_sys::ANativeActivity,
+    saved_state: *const libc::c_void,
+    saved_state_size: libc::size_t,
+) {
+    ANativeActivity_finish(activity);
+}
+
 #[no_mangle]
 extern "C" fn ANativeActivity_onCreate(
     activity: *mut ndk_sys::ANativeActivity,
